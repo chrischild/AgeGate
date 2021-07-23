@@ -1,0 +1,45 @@
+{
+  "name": "Getting Started Example",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "scripts": [
+      "scripts/jquery-3.3.1.min.js",
+      "scripts/background.js"
+    ],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+    }
+  },
+  "icons": {
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*", "https://*/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "scripts/jquery-3.3.1.min.js",
+        "js/extension.js",
+        "js/bootstrap.js",
+        "scripts/userservice.js",
+        "scripts/content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "./agegate.html"
+  ],
+  "manifest_version": 2
+}
